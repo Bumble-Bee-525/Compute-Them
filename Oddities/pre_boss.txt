@@ -1,0 +1,49 @@
+define(function () {
+
+    return function () {
+        return {
+            map: [
+        ["normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal"],
+        ["normal", "normal", "normal", "dark", "normal", "normal", "normal", "dark", "normal", "normal", "normal"],
+        ["normal", "normal", "normal", "normal", "dark", "normal", "dark", "normal", "normal", "normal", "normal"],
+        ["normal", "normal", "normal", "dark", "dark", "dark", "dark", "dark", "normal", "normal", "normal"],
+        ["normal", "normal", "dark", "dark", "red", "dark", "red", "dark", "dark", "normal", "normal"],
+        ["normal", "normal", "normal", "dark", "dark", "dark", "dark", "dark", "normal", "normal", "normal"],
+        ["normal", "normal", "dark", "normal", "dark", "normal", "dark", "normal", "dark", "normal", "normal"],
+        ["normal", "dark", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "dark", "normal"],
+        ["normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal"]
+    ],
+            code: function () {
+                function choice () {
+                    if (dark()) {
+                        fromBelow()
+                    }
+                    if (red()) {
+                        fromAbove()
+                    }
+                }
+                function fromAbove () {
+                    up()
+                    right()
+                    right()
+                    down()
+                    left()
+                    choice()
+                }
+                function fromBelow () {
+                    down()
+                    right()
+                    right()
+                    up()
+                    left()
+                    choice()
+                }
+                choice()
+            },
+            roundedSquares: true,
+            x: 2,
+            y: 4
+        }
+    }
+
+})

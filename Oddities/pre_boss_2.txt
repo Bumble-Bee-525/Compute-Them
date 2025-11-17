@@ -1,0 +1,41 @@
+define(function () {
+    return function () {
+        return {
+            map: [
+        ["normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal"],
+        ["normal", "green", "green", "normal", "normal", "normal", "dark", "normal", "normal", "normal", "green", "green", "normal"],
+        ["normal", "green", "green", "green", "normal", "dark", "dark", "dark", "normal", "green", "green", "green", "normal"],
+        ["normal", "normal", "green", "green", "green", "dark", "dark", "dark", "green", "green", "green", "normal", "normal"],
+        ["normal", "normal", "normal", "normal", "dark", "dark", "dark", "dark", "dark", "normal", "normal", "normal", "normal"],
+        ["normal", "normal", "dark", "dark", "dark", "yellow", "dark", "yellow", "dark", "dark", "dark", "normal", "normal"],
+        ["normal", "normal", "dark", "normal", "dark", "dark", "dark", "dark", "dark", "normal", "dark", "normal", "normal"],
+        ["normal", "normal", "normal", "normal", "normal", "dark", "normal", "dark", "normal", "normal", "normal", "normal", "normal"],
+        ["normal", "normal", "normal", "normal", "normal", "dark", "normal", "dark", "normal", "normal", "normal", "normal", "normal"],
+        ["normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal"]
+    ],
+            code: function () {
+                function choice () {
+                    if (yellow()) {
+                        while (!green()) {
+                            left()
+                            down()
+                        }
+                        choice()
+                    } else {
+                        while (!yellow()) {
+                            down()
+                            right()
+                        }
+                    }
+                    right()
+                }
+
+                choice()
+            },
+            roundedSquares: true,
+            x: 7,
+            y: 5
+        }
+    }
+
+})

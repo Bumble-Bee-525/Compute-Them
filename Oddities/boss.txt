@@ -1,0 +1,54 @@
+define(function () {
+    return function () {
+        return {
+            map: [
+        ["normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal"],
+        ["normal", "normal", "normal", "dark", "dark", "dark", "dark", "dark", "normal", "normal", "normal"],
+        ["normal", "normal", "dark", "dark", "dark", "dark", "dark", "dark", "dark", "normal", "normal"],
+        ["normal", "dark", "dark", "purple", "purple", "purple", "purple", "purple", "dark", "dark", "normal"],
+        ["normal", "dark", "purple", "yellow", "yellow", "dark", "yellow", "yellow", "purple", "dark", "normal"],
+        ["normal", "dark", "yellow", "yellow", "yellow", "dark", "yellow", "yellow", "yellow", "dark", "normal"],
+        ["normal", "dark", "yellow", "yellow", "dark", "dark", "dark", "yellow", "yellow", "dark", "normal"],
+        ["normal", "dark", "dark", "dark", "dark", "red", "dark", "dark", "dark", "dark", "normal"],
+        ["normal", "normal", "dark", "dark", "dark", "dark", "dark", "dark", "dark", "normal", "normal"],
+        ["normal", "normal", "normal", "dark", "dark", "dark", "dark", "dark", "normal", "normal", "normal"],
+        ["normal", "normal", "normal", "dark", "normal", "dark", "normal", "dark", "normal", "normal", "normal"],
+        ["normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal", "normal"]
+    ],
+            code: function () {
+
+                function fall () {
+                    while (!red()) {
+                        down()
+                    }
+                }
+                function eye () {
+                    for (let i = 0; i < 2; i++) {
+                        right()
+                        if (dark()) {
+                            fall()
+                        }
+                    }
+                }
+
+                while (!purple()) {
+                    up()
+                }
+
+                for (let i = 0; i < 3; i++) {
+                    left()
+                    if (!purple()) {
+                        down()
+                        right()
+                        eye()
+                    }
+                }
+
+            },
+            roundedSquares: true,
+            x: 5,
+            y: 7
+        }
+    }
+
+})
